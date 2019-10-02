@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         $urls = Urls::all();
 
-        $arr = array();
+        $bots = array();
         foreach($urls as $key=>$val){
             $statusBot =   Bot::where('url_id', $val['id'])->orderBy('created_at', 'desc')->first();
             $bots[] = array('id' => $val['id'], 'urlNome' => $val['urlNome'], 'status' => $statusBot['status'], 'url' => $val['url'], 'created_at' => $val['created_at']);

@@ -17,8 +17,7 @@ class CreateBotsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('captura');
             $table->string('status');
-            $table->unsignedInteger('url_id');
-            $table->foreign('url_id')->reference('id')->on('urls')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('url_id');
             $table->timestamps();
         });
     }
