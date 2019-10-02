@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');;
 
 Route::get('/bot', 'BotControlador@list');
-Route::get('/bot/{id}', 'BotControlador@show');
+Route::get('/url/visualizar/{id}', 'BotControlador@show');
 
 Route::get('/url/cadastro', 'ControladorUrls@create');
 Route::post('/url/cadastro', 'ControladorUrls@store');

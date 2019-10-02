@@ -76,9 +76,10 @@ class BotControlador extends Controller
      */
     public function show($id)
     {
-        $data = Bot::find($id);
-
-        print_r($data);
+        $dados = Bot::find($id);
+    
+      //  return view('show', campact('dados'));
+        return view('show', compact('dados'));
     }
 
 }

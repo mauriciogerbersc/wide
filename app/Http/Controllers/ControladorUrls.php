@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Urls;
+use App\Bot;
 
 class ControladorUrls extends Controller
 {
@@ -27,8 +28,7 @@ class ControladorUrls extends Controller
      */
     public function index()
     {
-        $urls = Urls::all();
-        return view('index', compact('urls'));
+      
     }
 
     /**

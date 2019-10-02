@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Urls;
+use App\Bot;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+
         $urls = Urls::all();
-        return view('dashboard', compact('urls'));
+
+        $arr = array();
+        foreach($urls as $key=>$val){
+            $statusBot =   Bot::where('url_id', $val['id'])->orderBy('created_at', 'desc')->first();
+            $bots[] = array('id' => $val['id'], 'urlNome' => $val['urlNome'], 'status' => $statusBot['status'], 'url' => $val['url'], 'created_at' => $val['created_at']);
+        }
+
+       
+        return view('dashboard', compact('bots'));
     }
 
 }

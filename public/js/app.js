@@ -2,11 +2,6 @@
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
-try {
-  window.$ = window.jQuery = require('jquery');
-  window.Popper = require('popper.js').default;
-  require('bootstrap');
-} catch (e) {}
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
